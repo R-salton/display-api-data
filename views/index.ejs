@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        
+       
+        <% if(locals.crypto) {%>
+            <div class="header">
+                <h1>Top 10 Crypto Currencies</h1>
+                
+            </div>
+            
+                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">
+                                           Name
+                                        </th>
+                                        <th scope="col" class="px-4 py-3">
+                                            Last
+                                        </th>
+                                        <th scope="col" class="px-4 py-3">
+                                           Buy
+                                        </th>
+                                        <th scope="col" class="px-4 py-3">
+                                            Sell
+                                        </th>
+                                        <th scope="col" class="px-4 py-3">
+                                            Volume
+                                        </th>
+                                        <th scope="col" class="px-4 py-3">
+                                            Base Unit
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                <% crypto.map(item =>{ %>
+
+            
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <%= item.name  %>
+                                    </th>
+                                    <td class="px-6 py-2">
+                                        <%= item.last  %>
+                                    </td>
+                                    <td class="px-6 py-2">
+                                        <%= item.buy  %>
+                                    </td>
+                                    <td class="px-6 py-2">
+                                        <%= item.sell  %>
+                                    </td>
+                                    <td class="px-6 py-2">
+                                        <%= item.volume  %>
+                                    </td>
+                                    <td class="px-6 py-2">
+                                        <%= item.base_unit  %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    
+            
+                 
+                   
+               
+
+
+            </div>
+
+            <% } %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
